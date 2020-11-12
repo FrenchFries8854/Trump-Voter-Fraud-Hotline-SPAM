@@ -11,12 +11,30 @@ url = "https://defendyourballot.formstack.com/forms/index.php"
 
 names = json.loads(open("names.json").read())
 states = json.loads(open("states.json").read())
+cities = json.loads(open("cities.json").read())
+directions = json.loads(open("directions.json").read())
+street_types = json.loads(open("street_types.json").read())
 
 counter = -1
 for name in names:
     counter += 1
     middle_name = random.choice(names)
     last_name = random.choice(names)
+    phone_number = f"({random.randint(1, 9)}{random.randint(1, 9)}{random.randint(1, 9)}) {random.randint(0, 9)}{random.randint(0, 9)}{random.randint(0, 9)}-{random.randint(0, 9)}{random.randint(0, 9)}{random.randint(0, 9)}{random.randint(0, 9)}"
+    house_number_rand = random.randint(3, 5)
+    house_number = ""
+    for x in range(house_number_rand):
+        house_number = house_number + str(random.randint(1, 9))
+    street = ""
+    street_num_rand = random.randint(2, 3)
+    for x in range(street_num_rand):
+        street = street + str(random.randint(1, 9))
+    address_one = f"{house_number} {street} {random.choice(street_types)} {random.choice(directions)}"
+    state = random.choice(states)
+    city = random.choice(cities[state])
+    incident_state = random.choice(states)
+    incident_city = random.choice(cities[incident_state])
+    polling_place = f"{random.choice(names)} {random.choice(names)} Vote Center"
     name_extra = "".join(random.choice(string.digits))
 
     email = name.lower() + name_extra + "@gmail.com"
@@ -42,17 +60,17 @@ for name in names:
         "field101315259-first": name,
         "field101315259-middle": middle_name,
         "field101315259-last": last_name,
-        "field101315260": "Phone Number",
-        "field101316245-address": "Address 1",
-        "field101316245-address2": "Address 2",
-        "field101316245-city": "City",
-        "field101316245-state": random.choice(states),
+        "field101315260": phone_number,
+        "field101316245-address": address_one,
+        "field101316245-address2": "",
+        "field101316245-city": city,
+        "field101316245-state": state,
         "field101316245-zip": str(zipcode),
         "field101315261": email,
         "field101315261_confirm": email,
-        "field101315264": "State of Incident",
-        "field101315265": "County of the Incident",
-        "field101315266": "Name of the Polling Place or Early Voting Site",
+        "field101315264": incident_state,
+        "field101315265": incident_city,
+        "field101315266": polling_place,
         "field101315267": "describe the incident",
         "field101315268": "(binary)",
         "field101319448": "",
@@ -64,3 +82,5 @@ for name in names:
         "g-recaptcha-response": "",
         "nonce": "fpXUo6x3cXPNBSJs"
     })
+    print(f"x{counter} sent: {name} {middle_name} {last_name} {phone_number} {address_one} {city} {street} {zipcode} {email}")
+    print(f"Occurred in: {incident_city} {incident_state} {polling_place}")

@@ -914,10 +914,10 @@
   "HI": [
     "Honolulu"
   ],
-  "alaska": [
+  "AK": [
     "Anchorage"
   ],
-  "new jersey": [
+  "NJ": [
     "Newark",
     "Jersey City",
     "Paterson",
@@ -941,7 +941,7 @@
     "Linden",
     "Atlantic City"
   ],
-  "idaho": [
+  "ID": [
     "Boise City",
     "Nampa",
     "Meridian",
@@ -951,7 +951,7 @@
     "Coeur d'Alene",
     "Twin Falls"
   ],
-  "alabama": [
+  "AL": [
     "Birmingham",
     "Montgomery",
     "Mobile",
@@ -965,7 +965,7 @@
     "Florence",
     "Gadsden"
   ],
-  "iowa": [
+  "IA": [
     "Des Moines",
     "Cedar Rapids",
     "Davenport",
@@ -980,7 +980,7 @@
     "Urbandale",
     "Cedar Falls"
   ],
-  "arkansas": [
+  "AR": [
     "Little Rock",
     "Fort Smith",
     "Fayetteville",
@@ -992,7 +992,7 @@
     "Pine Bluff",
     "Bentonville"
   ],
-  "utah": [
+  "UT": [
     "Salt Lake City",
     "West Valley City",
     "Provo",
@@ -1012,7 +1012,7 @@
     "Riverton",
     "Roy"
   ],
-  "rhode island": [
+  "RI": [
     "Providence",
     "Warwick",
     "Cranston",
@@ -1020,7 +1020,7 @@
     "East Providence",
     "Woonsocket"
   ],
-  "mississippi": [
+  "MS": [
     "Jackson",
     "Gulfport",
     "Southaven",
@@ -1028,11 +1028,11 @@
     "Biloxi",
     "Meridian"
   ],
-  "south dakota": [
+  "SD": [
     "Sioux Falls",
     "Rapid City"
   ],
-  "connecticut": [
+  "CT": [
     "Bridgeport",
     "New Haven",
     "Stamford",
@@ -1049,7 +1049,7 @@
     "Norwich",
     "Shelton"
   ],
-  "south carolina": [
+  "SC": [
     "Columbia",
     "Charleston",
     "North Charleston",
@@ -1063,39 +1063,39 @@
     "Florence",
     "Spartanburg"
   ],
-  "new hampshire": [
+  "NH": [
     "Manchester",
     "Nashua",
     "Concord"
   ],
-  "north dakota": [
+  "ND": [
     "Fargo",
     "Bismarck",
     "Grand Forks",
     "Minot"
   ],
-  "montana": [
+  "MT": [
     "Billings",
     "Missoula",
     "Great Falls",
     "Bozeman"
   ],
-  "delaware": [
+  "DE": [
     "Wilmington",
     "Dover"
   ],
-  "maine": [
+  "ME": [
     "Portland"
   ],
-  "wyoming": [
+  "WY": [
     "Cheyenne",
     "Casper"
   ],
-  "west virginia": [
+  "WV": [
     "Charleston",
     "Huntington"
   ],
-  "vermont": [
+  "VT": [
     "Burlington"
   ]
 }
