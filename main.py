@@ -16,8 +16,9 @@ directions = json.loads(open("directions.json").read())
 street_types = json.loads(open("street_types.json").read())
 
 counter = -1
-for name in names:
+while True:
     counter += 1
+    first_name = random.choice(names)
     middle_name = random.choice(names)
     last_name = random.choice(names)
     phone_number = f"({random.randint(1, 9)}{random.randint(1, 9)}{random.randint(1, 9)}) {random.randint(0, 9)}{random.randint(0, 9)}{random.randint(0, 9)}-{random.randint(0, 9)}{random.randint(0, 9)}{random.randint(0, 9)}{random.randint(0, 9)}"
@@ -29,6 +30,14 @@ for name in names:
     street_num_rand = random.randint(2, 3)
     for x in range(street_num_rand):
         street = street + str(random.randint(1, 9))
+    if street[-1] == "1":
+        street = f"{street}st"
+    elif street[-1] == "2":
+        street = f"{street}nd"
+    elif street[-1] == "3":
+        street = f"{street}rd"
+    else:
+        street = f"{street}th"
     address_one = f"{house_number} {street} {random.choice(street_types)} {random.choice(directions)}"
     state = random.choice(states)
     city = random.choice(cities[state])
@@ -37,7 +46,7 @@ for name in names:
     polling_place = f"{random.choice(names)} {random.choice(names)} Vote Center"
     name_extra = "".join(random.choice(string.digits))
 
-    email = name.lower() + name_extra + "@gmail.com"
+    email = first_name.lower() + name_extra + "@gmail.com"
     zipcode = random.randint(0, 9) + random.randint(0, 9) + random.randint(0, 9) + random.randint(0, 9) + random.randint(0, 9)
 
     password = "".join(random.choice(chars) for i in range(8))
@@ -57,7 +66,7 @@ for name in names:
         "latitude": "",
         "longitude": "",
         "viewparam": "933809",
-        "field101315259-first": name,
+        "field101315259-first": first_name,
         "field101315259-middle": middle_name,
         "field101315259-last": last_name,
         "field101315260": phone_number,
@@ -82,5 +91,5 @@ for name in names:
         "g-recaptcha-response": "",
         "nonce": "fpXUo6x3cXPNBSJs"
     })
-    print(f"x{counter} sent: {name} {middle_name} {last_name} {phone_number} {address_one} {city} {street} {zipcode} {email}")
+    print(f"x{counter + 1} sent: {first_name} {middle_name} {last_name} {phone_number} {address_one} {city} {street} {zipcode} {email}")
     print(f"Occurred in: {incident_city} {incident_state} {polling_place}")
