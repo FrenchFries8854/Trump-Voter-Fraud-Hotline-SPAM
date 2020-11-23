@@ -3,6 +3,7 @@ import os
 import random
 import string
 import json
+import time
 
 chars = string.ascii_letters + string.digits + "!@#$%^&*()"
 random.seed = (os.urandom(1024))
@@ -47,7 +48,7 @@ while True:
     name_extra = "".join(random.choice(string.digits))
 
     email = first_name.lower() + name_extra + "@gmail.com"
-    zipcode = random.randint(0, 9) + random.randint(0, 9) + random.randint(0, 9) + random.randint(0, 9) + random.randint(0, 9)
+    zipcode = f"{random.randint(0, 9)}{random.randint(0, 9)}{random.randint(0, 9)}{random.randint(0, 9)}{random.randint(0, 9)}"
 
     password = "".join(random.choice(chars) for i in range(8))
 
@@ -91,5 +92,8 @@ while True:
         "g-recaptcha-response": "",
         "nonce": "fpXUo6x3cXPNBSJs"
     })
-    print(f"x{counter + 1} sent: {first_name} {middle_name} {last_name} {phone_number} {address_one} {city} {street} {zipcode} {email}")
+    print(f"x{counter + 1} sent: {first_name} {middle_name} {last_name} {phone_number} {address_one} {city} {state} {zipcode} {email}")
     print(f"Occurred in: {incident_city} {incident_state} {polling_place}")
+    sleep_time = random.randint(1, 75)
+    print(f"Sleeping for {sleep_time} seconds")
+    time.sleep(sleep_time)
